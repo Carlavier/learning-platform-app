@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "build": [
+    {
+      "src": "ui/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "ignoreCommand": "if [ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ]; then echo \"Skipping build for branch $VERCEL_GIT_COMMIT_REF\"; exit 0; else exit 1; fi"
+}
